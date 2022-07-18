@@ -1,6 +1,4 @@
 {
-  "extends": "@bubkoo/eslint-config",
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
+  "extends": "eslint-config-egg",
+  "root": true
 }

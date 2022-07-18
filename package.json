@@ -1,64 +1,36 @@
 {
-  "name": "365dots",
-  "description": "Presenting the time progress of a year",
+  "name": "@365dot/server",
+  "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "lint": "eslint --ext .ts ./src/**/*.ts",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "build": "pnpm -r --filter=./packages/* run build",
-    "start": "pnpm -r --filter=./packages/server run stop && pnpm -r --filter=./packages/server run start",
-    "precommit": "lint-staged",
-    "prepare": "husky install"
+  "egg": {
+    "declarations": true
   },
-  "lint-staged": {
-    "*": [
-      "prettier --write --ignore-unknown"
-    ],
-    "*.js": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "eslint --fix",
-      "prettier --parser=typescript --write"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "body-max-line-length": [
-        2,
-        "always",
-        300
-      ],
-      "footer-max-line-length": [
-        2,
-        "always",
-        300
-      ]
-    }
+  "dependencies": {
+    "@365dots/svg": "^1.0.0",
+    "egg": "^2.36.0",
+    "egg-scripts": "^2.17.0",
+    "lodash.camelcase": "^4.3.0"
   },
   "devDependencies": {
-    "@bubkoo/eslint-config": "^1.1.0",
-    "@bubkoo/prettier-config": "^1.0.1",
-    "@bubkoo/rollup-config": "^1.0.3",
-    "@bubkoo/semantic-release-config": "^1.3.0",
-    "@bubkoo/tsconfig": "^1.0.0",
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
-    "@semantic-release-monorepo/cli": "^1.0.17",
-    "eslint": "^8.20.0",
-    "husky": "^8.0.1",
-    "is-ci": "^3.0.1",
-    "lint-staged": "^13.0.3",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.7.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.77.0",
-    "semantic-release": "^19.0.3",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "autod": "^3",
+    "autod-egg": "^1",
+    "egg-bin": "^5.2.0",
+    "egg-ci": "^2",
+    "egg-mock": "^4",
+    "eslint": "^8",
+    "eslint-config-egg": "^12"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-demo",
+    "stop": "egg-scripts stop --title=egg-server-demo",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
   },
   "author": {
     "name": "bubkoo",
@@ -69,8 +41,8 @@
   "bugs": {
     "url": "https://github.com/bubkoo/365dots/issues"
   },
-  "packageManager": "pnpm@7.1.9",
   "engines": {
-    "node": ">=14.6.0"
+    "node": "16.x",
+    "yarn": "1.x"
   }
 }
