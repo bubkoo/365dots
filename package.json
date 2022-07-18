@@ -6,9 +6,8 @@
     "lint": "eslint --ext .ts ./src/**/*.ts",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "build": "pnpm -r --filter=./packages/* run build",
-    "start": "pnpm -r --filter=./packages/server run stop && pnpm -r --filter=./packages/server run start",
     "precommit": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "is-ci || husky install"
   },
   "lint-staged": {
     "*": [
