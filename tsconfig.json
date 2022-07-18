@@ -1,0 +1,12 @@
+{
+  "extends": "@bubkoo/tsconfig",
+  "exclude": [
+    "**/node_modules",
+    "**/es",
+    "**/lib",
+    "**/dist",
+    "**/test",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}
