@@ -17,6 +17,7 @@ class HomeController extends Controller {
       app.cache(ctx.search, cache);
     }
 
+    ctx.headers['cache-control'] = 'max-age=43200';
     ctx.type = 'image/svg+xml';
     ctx.body = cache;
   }
