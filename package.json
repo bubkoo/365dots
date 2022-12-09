@@ -2,35 +2,14 @@
   "name": "@365dot/server",
   "version": "1.0.0",
   "private": true,
-  "egg": {
-    "declarations": true
-  },
   "dependencies": {
     "@365dots/svg": "^1.0.0",
-    "egg": "^2.36.0",
-    "egg-scripts": "^2.17.0",
+    "express": "^4.18.2",
     "lodash.camelcase": "^4.3.0"
   },
-  "devDependencies": {
-    "autod": "^3",
-    "autod-egg": "^1",
-    "egg-bin": "^5.2.0",
-    "egg-ci": "^2",
-    "egg-mock": "^4",
-    "eslint": "^8",
-    "eslint-config-egg": "^12"
-  },
+  "devDependencies": {},
   "scripts": {
-    "start": "egg-scripts start --title=egg-server-365dots",
-    "stop": "egg-scripts  stop  --title=egg-server-365dots",
-    "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
-    "lint": "eslint .",
-    "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "start": "node index.js"
   },
   "author": {
     "name": "bubkoo",
@@ -42,7 +21,6 @@
     "url": "https://github.com/bubkoo/365dots/issues"
   },
   "engines": {
-    "node": "16.x",
-    "yarn": "1.x"
+    "node": "16.x"
   }
 }
